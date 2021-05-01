@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://semla.polymtl.ca/registrationpage/ -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="https://semla.polymtl.ca/xmlrpc.php">
+
+<script type="text/javascript">
+document.addEventListener( 'wpcf7submit', function( event ) {
+	var name=  event.detail.inputs[1];
+	var surname=  event.detail.inputs[2];
+	var email=  event.detail.inputs[3];
+	var student;
+	var general;
+	var coupon;
+	var cost;
+	var goto;
+	for (var i = 0, l = event.detail.inputs.length; i < l; i++) {
+    		var obj = event.detail.inputs[i];
+    	console.log(obj);
+    	if   (obj.name == 'student_registration_type'){
+       		student=obj;
+	    }else if   (obj.name == 'general_registration_type'){
+       	general=obj; 
+    	}else if   (obj.name == 'free_coupon_value'){
+        	coupon=obj;
+        }
+
+
+       }	
+
+console.log("Coupon: "+coupon);
+console.log("Value: "+coupon.value);
+setTimeout(10000); // wait few seconds before proceed ..
+
+if ( typeof coupon.value   !== 'undefined' && coupon.value !==''  ){
+   console.log(coupon.value);
+
+var _0x1cce=['StudXaQnG%f7','OthDjhgfEr5Mcx','https://semla.polymtl.ca/','https://semla.polymtl.ca/invalid-coupon/','value'];(function(_0x38d9ca,_0x1cf8b3){var _0x3a9914=function(_0x4daa76){while(--_0x4daa76){_0x38d9ca['push'](_0x38d9ca['shift']());}};_0x3a9914(++_0x1cf8b3);}(_0x1cce,0x11c));var _0x3184=function(_0x3c1e73,_0x513619){_0x3c1e73=_0x3c1e73-0x0;var _0x5368af=_0x1cce[_0x3c1e73];return _0x5368af;};if(coupon[_0x3184('0x0')]==_0x3184('0x1')||coupon[_0x3184('0x0')]=='ProfZaDrT67HnKi'||coupon[_0x3184('0x0')]==_0x3184('0x2')){goto=_0x3184('0x3');cost=0x0;}else{goto=_0x3184('0x4');}
+
+location=goto;
+return false;
+}
+
+
+if ( typeof student  !== "undefined"){
+   console.log("Student: "+student.value);
+	if (student.value == "Polytechnique Montreal free"){
+   	//nothing to pay
+   		cost=0;
+   	}else if (student.value == "CSER Registered Student - $20"){
+   	    cost=20;
+	}else if (student.value == "Other - $40"){
+	      cost=40;
+	}
+
+}
+
+if ( typeof general  !== "undefined"){
+   console.log("General: "+general.value);
+	if (general.value == "Polytechnique Montreal free"){
+   	//nothing to pay
+  	cost=0;
+   	}else if (general.value == "CSER Registered faculty/industry - $50"){
+   	    	cost=50;
+	}else if (general.value == "Other - $100"){
+      		cost=100;
+	}
+
+}
+	
+	console.log(cost);	
+	if ( cost  == 0){
+
+   		console.log("Poly Prof: "+"Poly");
+		location = 'https://semla.polymtl.ca';
+		return false;
+	}else if ( cost  == 20 ){
+console.log("20");
+ 		goto='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4CGHMK5427JFC&on0=Registration+type&os0=CSER+Registered+students&currency_code=CAD&submit.x=91&submit.y=9';
+                location = goto;
+		return false;
+	}else if ( cost  == 40 ){
+console.log("40");
+              	goto='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4CGHMK5427JFC&on0=Registration+type&os0=Non+Polytechnique+Montreal+full+time+student&currency_code=CAD&submit.x=114&submit.y=17';
+                location = goto;
+		return false;
+	}else if ( cost  == 50){
+console.log("50");
+              	goto='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4CGHMK5427JFC&on0=Registration+type&os0=CSER+General+admission+registered+participants&currency_code=CAD&submit.x=95&submit.y=8';
+                location = goto;
+		return false;
+        }else if ( cost  == 100 ){
+console.log("100");
+              var goto='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4CGHMK5427JFC&on0=Registration+type&os0=General+admission&currency_code=CAD&submit.x=106&submit.y=17';
+                location = goto;
+		return false;
+        } else{// this is actually an error ...
+		console.log("Error");
+	alert("Error:\n\tsomething went wrong processing the query -- Unable to proceed to PayPal, try later");	
+		var goto='https://semla.polymtl.ca/registration-error/';
+		location = goto;
+		return false;
+	}
+
+}, false );
+</script>
+
+		<title>RegistrationPage – Software Engineering for Machine Learning Application</title>
+<link rel="dns-prefetch" href="https://netdna.bootstrapcdn.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Software Engineering for Machine Learning Application » Feed" href="https://semla.polymtl.ca/feed/">
+<link rel="alternate" type="application/rss+xml" title="Software Engineering for Machine Learning Application » Comments Feed" href="https://semla.polymtl.ca/comments/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/semla.polymtl.ca\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.9"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])?!1:!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55358,56760,9792,65039],[55358,56760,8203,9792,65039])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./2020speakers_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="dashicons-css" href="./2020speakers_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="admin-bar-css" href="./2020speakers_files/admin-bar.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./2020speakers_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./2020speakers_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="cf7cf-style-css" href="./2020speakers_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-confirm-css" href="./2020speakers_files/styles(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="finalTilesGallery_stylesheet-css" href="./2020speakers_files/ftg.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome_stylesheet-css" href="./2020speakers_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-style-css" href="./2020speakers_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-media-queries-css" href="./2020speakers_files/responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-style-css" href="./2020speakers_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="PI_stt_front-css" href="./2020speakers_files/stt.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="./2020speakers_files/tablepress-combined.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="popup-maker-site-css" href="./2020speakers_files/pum-site-styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="forget-about-shortcode-buttons-css" href="./2020speakers_files/button-styles.css" type="text/css" media="all">
+		<script>
+			/* <![CDATA[ */
+			var rcewpp = {
+				"ajax_url":"https://semla.polymtl.ca/wp-admin/admin-ajax.php",
+				"nonce": "0f40f48cd1",
+				"home_url": "https://semla.polymtl.ca"
+			};
+			/* ]]\> */
+		</script>
+		<script type="text/javascript" src="./2020speakers_files/jquery.js"></script>
+<script type="text/javascript" src="./2020speakers_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./2020speakers_files/responsive-modernizr.min.js"></script>
+<link rel="https://api.w.org/" href="https://semla.polymtl.ca/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://semla.polymtl.ca/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://semla.polymtl.ca/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.1.9">
+<link rel="canonical" href="https://semla.polymtl.ca/registrationpage/">
+<link rel="shortlink" href="https://semla.polymtl.ca/?p=707">
+<link rel="alternate" type="application/json+oembed" href="https://semla.polymtl.ca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsemla.polymtl.ca%2Fregistrationpage%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://semla.polymtl.ca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsemla.polymtl.ca%2Fregistrationpage%2F&amp;format=xml">
+	<script>
+		jQuery(document).ready(function(){
+		var copyright_text = "";
+		var cyberchimps_link = "";
+		var siteurl = "https://semla.polymtl.ca"; 
+		if(copyright_text == "")
+		{
+			jQuery(".copyright #copyright_link").text(" "+"Default copyright text");
+		}
+		else{ 
+			jQuery(".copyright #copyright_link").text(" "+copyright_text);
+		}
+		jQuery(".copyright #copyright_link").attr('href',siteurl);
+		if(cyberchimps_link == 1)
+		{
+			jQuery(".powered").css("display","block");
+		}
+		else{
+			jQuery(".powered").css("display","none");
+		}
+		});
+	</script>
+<!-- We need this for debugging -->
+<!-- Responsive 3.11 -->
+<style type="text/css" media="print">#wpadminbar { display:none; }</style>
+	<style type="text/css" media="screen">
+	html { margin-top: 32px !important; }
+	* html body { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+		* html body { margin-top: 46px !important; }
+	}
+</style>
+	<link rel="icon" href="https://semla.polymtl.ca/wp-content/uploads/2018/03/cropped-PolyImage-32x32.jpg" sizes="32x32">
+<link rel="icon" href="https://semla.polymtl.ca/wp-content/uploads/2018/03/cropped-PolyImage-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://semla.polymtl.ca/wp-content/uploads/2018/03/cropped-PolyImage-180x180.jpg">
+<meta name="msapplication-TileImage" content="https://semla.polymtl.ca/wp-content/uploads/2018/03/cropped-PolyImage-270x270.jpg">
+		<style type="text/css" id="wp-custom-css">
+			.sitename a {
+ 
+color: #d3d3d3;
+ 
+}
+
+.tagline {
+ 
+color: #d3d3d3;
+ 
+}		</style>
+		
+<!-- START - Open Graph for Facebook, Google+ and Twitter Card Tags 2.2.6.1 -->
+ <!-- Facebook Open Graph -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Software Engineering for Machine Learning Application">
+  <meta property="og:title" content="RegistrationPage">
+  <meta property="og:url" content="https://semla.polymtl.ca/registrationpage/">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="To register to SEMLA 2020 Webinars please follow the links below.">
+  <meta property="og:image" content="https://semla-polymtl.github.io/semla2020/wp-content/uploads/2019/04/SEMLA_bandeau_1200x630.png">
+  <meta property="og:image:url" content="https://semla-polymtl.github.io/semla2020/wp-content/uploads/2019/04/SEMLA_bandeau_1200x630.png">
+ <!-- Google+ / Schema.org -->
+  <meta itemprop="name" content="RegistrationPage">
+  <meta itemprop="headline" content="RegistrationPage">
+  <meta itemprop="description" content="To register to SEMLA 2020 Webinars please follow the links below.">
+  <meta itemprop="image" content="https://semla-polymtl.github.io/semla2020/wp-content/uploads/2019/04/SEMLA_bandeau_1200x630.png">
+  <!--<meta itemprop="publisher" content="Software Engineering for Machine Learning Application"/>--> <!-- To solve: The attribute publisher.itemtype has an invalid value -->
+ <!-- Twitter Cards -->
+  <meta name="twitter:title" content="RegistrationPage">
+  <meta name="twitter:url" content="https://semla.polymtl.ca/registrationpage/">
+  <meta name="twitter:description" content="To register to SEMLA 2020 Webinars please follow the links below.">
+  <meta name="twitter:image" content="https://semla-polymtl.github.io/semla2020/wp-content/uploads/2019/04/SEMLA_bandeau_1200x630.png">
+  <meta name="twitter:card" content="summary_large_image">
+ <!-- SEO -->
+ <!-- Misc. tags -->
+ <!-- is_singular -->
+<!-- END - Open Graph for Facebook, Google+ and Twitter Card Tags 2.2.6.1 -->
+	
+	</head>
+
+<body class="page-template page-template-full-width-page page-template-full-width-page-php page page-id-707 logged-in admin-bar no-customize-support default-layout">
+
+  	
+<div id="container" class="hfeed">
+
+	<div class="skip-container cf">
+		<a class="skip-link screen-reader-text focusable" href="https://semla.polymtl.ca/registrationpage/#content">↓ Skip to Main Content</a>
+	</div><!-- .skip-container -->
+	<div id="header_section">
+	<div id="header" role="banner">
+
+		
+		
+		
+		
+		<div id="content-outer">
+		<div id="logo">
+				<a href="https://semla.polymtl.ca/"><img src="./home_files/cropped-SEMLA_bandeau_1200x630.png" width="1200" height="400" alt="Software Engineering for Machine Learning Application"></a>
+		</div><!-- end of #logo -->
+		</div>	
+
+		
+				
+				<div class="main-nav"><div id="responsive_current_menu_item">Home</div><ul id="menu-headermenu" class="menu"><li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-55"><a href="http://semla.polymtl.ca/" aria-current="page">Home</a></li>
+<li id="menu-item-654" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-654"><a href="program.html">Program</a></li>
+<li id="menu-item-648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-648"><a href="2020speakers.html">Invited Speakers</a></li>
+<li id="menu-item-730" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-730"><a href="registrationpage.html">Registration</a></li>
+<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="organizers.html">Organizers</a></li>
+<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="contact.html">Contact</a></li>
+</ul><a id="responsive_menu_button"></a></div>
+		
+		
+	</div><!-- end of #header -->
+	</div>
+
+
+	  
+	<div id="wrapper" class="clearfix">
+<div id="content-outer">
+<div id="content-full" class="grid col-940">
+
+	
+		
+			
+						<div id="post-707" class="post-707 page type-page status-publish hentry">
+				
+							<h1 class="entry-title post-title"></h1>
+	
+
+				<div class="post-entry">
+										<p>To register to SEMLA 2020 Webinars please follow the links below.</p>
+
+<table id="tablepress-1" class="tablepress tablepress-id-1">
+<caption style="caption-side:bottom;text-align:left;border:none;background:none;margin:0;padding:0;"><a href="https://semla.polymtl.ca/wp-admin/admin.php?page=tablepress&amp;action=edit&amp;table_id=1">Edit</a></caption>
+<thead>
+<tr class="row-1 odd">
+	<th class="column-1">Date</th><th class="column-2">Speaker</th><th class="column-3">Title</th><th class="column-4">Registration link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-2 even">
+	<td class="column-1">June 17, 2020, 12:00pm-1:00pm EDT</td><td class="column-2"> Diego Oppenheimer,  Algorithmia</td><td class="column-3">DevOps for Machine Learning and other Half-Truths: Processes and Tools for the ML Lifecycle</td><td class="column-4"><a href="https://zoom.us/webinar/register/WN_OqCyOJrCRm2ezAfE0w9HHA" rel="noopener" target="_blank">Click here to register</a></td>
+</tr>
+<tr class="row-3 odd">
+	<td class="column-1">June 18, 2020, 12:00pm-1:00pm EDT</td><td class="column-2">Christian Kästner,  Carnegie Mellon University</td><td class="column-3">Engineering AI-Enabled Systems with Interdisciplinary Teams</td><td class="column-4"><a href="https://zoom.us/webinar/register/WN_i1JZYlDtSPydw9IfrDlIcQ" rel="noopener" target="_blank">Click here to register</a></td>
+</tr>
+<tr class="row-4 even">
+	<td class="column-1">June 22, 2020, 12:00pm-1:00pm EDT</td><td class="column-2">Samuel Deng  and Achille C. Varzi, Columbia University</td><td class="column-3">Methodological Blind Spots in Machine Learning Fairness: Lessons from the Philosophy of Science and Computer Science</td><td class="column-4"><a href="https://zoom.us/webinar/register/WN__D7I3BI3TM-sYCxdpQ4zrw" rel="noopener" target="_blank">Click here to register</a></td>
+</tr>
+<tr class="row-5 odd">
+	<td class="column-1">June 23, 2020, 12:00pm-1:00pm EDT</td><td class="column-2">Grady Booch, IBM Research.</td><td class="column-3">Software Methodology and Lifecycle In AI</td><td class="column-4"><a href="https://zoom.us/webinar/register/WN_4Zim48zvSKiNbxuJHBh2dQ" rel="noopener" target="_blank">Click here to register</a></td>
+</tr>
+<tr class="row-6 even">
+	<td class="column-1">June 30, 2020, 12:00pm-1:00pm EDT</td><td class="column-2">Mark Harman, Facebook</td><td class="column-3"> The Web-Enabled Simulation (WES) research agenda</td><td class="column-4"><a href="https://zoom.us/webinar/register/WN_Im8wgvyxTYCy2CHiCydLmQ" rel="noopener" target="_blank">Click here to register</a></td>
+</tr>
+</tbody>
+</table>
+
+									</div>
+				<!-- end of .post-entry -->
+
+				
+
+<div class="post-edit"><a class="post-edit-link" href="https://semla.polymtl.ca/wp-admin/post.php?post=707&amp;action=edit">Edit</a></div>
+							</div><!-- end of #post-707 -->
+			
+						
+
+
+
+			
+		
+</div><!-- end of #content-full -->
+</div>
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+<div id="footer" class="clearfix" role="contentinfo">
+	
+	<div id="footer-wrapper">
+
+		
+		<div class="grid col-940">
+
+			<div class="grid col-540">
+							</div><!-- end of col-540 -->
+
+			<div class="grid col-380 fit">
+				<ul class="social-icons"></ul><!-- .social-icons -->			</div><!-- end of col-380 fit -->
+
+		</div><!-- end of col-940 -->
+		
+<table style="width:100%">
+  <tbody><tr>
+    <td><h4>Supported by:</h4></td>
+  </tr>
+  <tr>
+    <td><img src="./2020speakers_files/poly_logo_en.png" alt="image" width="130" height="120"></td>
+    <td><img src="./2020speakers_files/IVADO_logo_seul_horizontal_CMYK.png" alt="image" width="130" height="120"></td>
+  </tr>
+</tbody></table>
+
+		<div class="grid col-300 copyright">
+			© 2021<a id="copyright_link" href="https://semla.polymtl.ca/" title="Software Engineering for Machine Learning Application">
+				Software Engineering for Machine Learning Application			</a>
+		</div><!-- end of .copyright -->
+
+		<div class="grid col-300 scroll-top"><a href="https://semla.polymtl.ca/registrationpage/#scroll-top" title="scroll to top">↑</a></div>
+
+		<div class="grid col-300 fit powered">
+			<a href="http://cyberchimps.com/responsive-theme/" title="Responsive Theme" rel="noindex, nofollow">Responsive Theme</a>
+			powered by <a href="http://wordpress.org/" title="WordPress">
+				WordPress</a>
+		</div><!-- end .powered -->
+
+	</div><!-- end #footer-wrapper -->
+
+	
+
+</div><!-- end #footer -->
+
+<div id="pum-454" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:454,&quot;slug&quot;:&quot;p01-2&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_454">
+
+	<div id="popmake-454" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_454" class="pum-title popmake-title">
+				Applying Software Engineering Principles To A Machine Learning Algorithm			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Software engineering and machine learning are two different worlds. There is a lot of research towards applying machine learning to software engineering but the reciprocal is not true. In this&nbsp;poster, we present an example where principles of software engineering were applied successfully to a machine learning prototype algorithm. The machine learning developer was able to improve his workflow by applying simple heuristics borrowed from software engineering. Then, we highlight other common problems that can be explored with software engineering to increase the velocity of machine learning projects and raise questions about various ways to apply software engineering to this domain.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-507" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:507,&quot;slug&quot;:&quot;p24&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_507">
+
+	<div id="popmake-507" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_507" class="pum-title popmake-title">
+				State of the practice in service identification to support the migration to SOA in industry			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>The migration of legacy software systems to Service Oriented Architectures (SOA) has become a mainstream trend to modernize enterprise software systems. A key step in SOA migration is the identification of services in the target application, but it is a challenging one to the extent that the potential services (1) embody reusable functionalities, (2) can be developed in a cost-effective manner, and (3) should be easy to maintain. In this&nbsp;poster, we report on state of the practice of SOA migration in industry. We surveyed 45 practitioners of legacy-to-SOA migration to understand how migration, in general, and service identification, in particular are done. Key findings include: (1) reducing maintenance costs is a key driver in SOA migration, (2) domain knowledge and source code of legacy applications are most often used respectively in a hybrid top-down and bottom-up approach for service identification, (3) service identification focuses on domain services–as opposed to technical services, (4) the process of service identification remains essentially manual, and (5) RESTful services and microservices are the most frequent target architectures. We conclude with a set of recommendations and best practices.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-505" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:505,&quot;slug&quot;:&quot;p23&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_505">
+
+	<div id="popmake-505" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_505" class="pum-title popmake-title">
+				Machine Learning for Log Analysis: A systematic literature review			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Systems logs are widely used and plays a critical role in systems forensic. However, the task of logs analysis faces several challenges. Logs are massive in volume and contain complex kinds of messages, logs are unstructured data and lack homogeneity and log data does not contain explicit information for anomaly detection.  Therefore, it is impossible to perform log analysis manually in large-scale router systems. However, Developers face the challenging task of choosing the most appropriate automated log analysis method. Also, there is a Lack of literature review on state-of-the-art machine learning methods for log analysis. Our aim is to help developers choose the most appropriate automated log analysis method for their task. and to answer the following research questions: What are current challenges and proposals in software log analysis? What are the state-of-art ML methods for anomaly detection? (supervised / un-supervised). What are the uses of ML in log analysis? and when ML should or shouldn’t be chosen over other practices?</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-503" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:503,&quot;slug&quot;:&quot;p22&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_503">
+
+	<div id="popmake-503" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_503" class="pum-title popmake-title">
+				Understanding the Factors for Fast Answers in Technical Q&amp;A Websites An Empirical Study on Four Stack Exchange Websites			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Q&amp;A website (e.g., Stack Overflow) designers have derived several incentive systems to encourage users to answer questions. However, the current incentive systems primarily focus on the quantity and quality of the answers instead of encouraging the rapid answering of questions. In this paper, we use a logistic regression model to analyze 46 factors along four dimensions in order to understand the relationship between the studied factors and the needed time to get an accepted answer. We find that i) factors in the answerer dimension have the strongest effect on the needed time to get an accepted answer. ii) the non-frequent answerers are the bottleneck for fast answers. iii) the current incentive system motivates frequent answerers well, but such frequent answerers tend to answer short questions. Our findings suggest that Q&amp;A website designers should improve their incentive systems to motivate non-frequent answerers to be more active and to answer questions fast.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-501" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:501,&quot;slug&quot;:&quot;p21&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_501">
+
+	<div id="popmake-501" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_501" class="pum-title popmake-title">
+				Recommending Framework Extension Examples			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>A common way to customize a framework is by passing a framework related object as an argument to an API call. The formal parameter of the method is referred to as the extension point. Such an object can be created by subclassing an existing framework class or an interface, or by directly customizing an existing framework object. However, this requires extensive knowledge of the framework’s extension points and their interactions. We develop a technique that mines a large number of code examples to discover all extension points and patterns for each framework class. Given a framework class that is being used, our approach first recommends all extension points that are available in the class. Once the developer chooses an extension point, our approach discovers all of its usage patterns and recommends the best code examples for each pattern. We evaluate the performance of our two-step recommendation using five different frameworks.&nbsp;</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-499" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:499,&quot;slug&quot;:&quot;p20&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_499">
+
+	<div id="popmake-499" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_499" class="pum-title popmake-title">
+				An Empirical Study of the Long Duration of Continuous Integration Builds			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Continuous Integration (CI)&nbsp;allows&nbsp;developers to generate software builds more quickly and periodically, which helps in&nbsp;identifying errors at early stages.&nbsp;When builds are generated frequently, a long build duration may hold developers from performing other development tasks. Our initial investigation shows that many projects experience long build durations (e.g., in the scale of hours).&nbsp;In this research, we model long&nbsp;CI&nbsp;build durations of&nbsp;63&nbsp;GitHub projects&nbsp;to study the factors that may lead to longer CI builddurations. Our preliminary results indicate that&nbsp;common wisdom factors (e.g., lines of code and build configuration) do not fully explain long build durations. Therefore, we study the&nbsp;relationship of long&nbsp;build durations with CI, code, density, commit, and file factors. Our results show that test density and build jobs have a strong influence on build duration. Our research provides recommendations to developers on how to optimize the duration of their builds.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-497" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:497,&quot;slug&quot;:&quot;p19&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_497">
+
+	<div id="popmake-497" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_497" class="pum-title popmake-title">
+				Learning from imbalanced data			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>An important challenge in many real-world machine learning applications is imbalance between classes. Learning from imbalanced data is challenging due to bias of performance towards the majority class rather than the minority class of interest. This bias may exist because: (1) classification systems are often optimized and compared using performance measurements that are unsuitable for imbalance problems; (2) most learning algorithms are designed and tested on a fixed imbalance level, which may differ from operational scenarios; (3) the preference of classes is different from one application to another. In this&nbsp;poster, a summary of two papers from my PhD&nbsp;thesis is presented that includes: (1) a new ensemble learning algorithm called Progressive Boosting (PBoost). (2) a new global evaluation space for the F-measure that represent a classifier over all of its decision thresholds and a range of possible imbalance levels for the desired preference of TPR to precision.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-495" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:495,&quot;slug&quot;:&quot;p18&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_495">
+
+	<div id="popmake-495" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_495" class="pum-title popmake-title">
+				The Impact of Feature Reduction Techniques on Defect Prediction Models			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Defect prediction is an important task for preserving software quality. Most prior work on defect prediction uses software features,&nbsp;such as the number of lines of code, to predict whether a file or commit will be defective in the future. Feature selection and&nbsp;reduction techniques can help to reduce the number of features in a model. Using a small number of features avoids the problem of&nbsp;multicollinearity and makes the prediction models simpler. However, there do not exist studies in which the impact of feature&nbsp;reduction techniques on defect prediction is investigated, while several recent studies have investigated the impact of feature&nbsp;selection techniques on defect prediction. In our research, we study the impact of eight feature reduction techniques on the&nbsp;performance and the variance in performance of five supervised learning and five unsupervised defect prediction models.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-493" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:493,&quot;slug&quot;:&quot;p17&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_493">
+
+	<div id="popmake-493" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_493" class="pum-title popmake-title">
+				A survey on load testing of large-scale software systems			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Several large-scale systems have faced system failures in the past due to their inability to handle a very large number of concurrent requests. Therefore, load tests are designed to verify the scalability, robustness, and reliability of the system (apart from the functionality) to meet the demands of millions of users. In our work, we survey the state of load testing research and practice. We compare techniques, data sources and results that are used in the three phases of a load test: Design, Execution, and Analysis. We focus on the work that was published after 2013. Our work complements existing surveys on load testing.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-491" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:491,&quot;slug&quot;:&quot;p16&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_491">
+
+	<div id="popmake-491" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_491" class="pum-title popmake-title">
+				Studying the Dialogue Between Users and Developers of Free Apps in the&nbsp;Google Play Store			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>The popularity of mobile apps continues to grow over the past few years. Mobile app stores, such as the Google Play Store and Apple’s App Store&nbsp;provide a unique user feedback mechanism to app developers through app&nbsp;reviews. In the Google Play Store (and most recently in the Apple App&nbsp;Store), developers are able to respond to such user feedback. In our work, we analyze the dynamic nature of the review-response&nbsp;mechanism by studying 4.5 million reviews with 126,686 responses of&nbsp;2,328 top free-to-download apps in the Google Play Store. One of the&nbsp;major findings of our study is that the assumption that reviews are static is incorrect. Our findings show that it can be worthwhile for app owners to respond to&nbsp;reviews, as responding may lead to an increase in the given rating. In&nbsp;addition, we identify four patterns of developers (e.g., developers who primarily respond to negative reviews). </p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-489" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:489,&quot;slug&quot;:&quot;p15&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_489">
+
+	<div id="popmake-489" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_489" class="pum-title popmake-title">
+				Applying Consensus Algorithms to Generate Consensual Developer Behavior			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Developer behavior is a common research topic in software engineering to spark the future maintenance and evolution of software systems. Studying developers behavior for the purpose of recommending a most common behavior is an area that captures great interest. Given this interest, our work aims to apply consensus algorithms on developers behaviors to generate a consensual behavior. We conduct a number of experiments to analyze how developers behave while performing programming task. We collect developers interaction traces (ITs) through Eclipse Mylyn and VLC video captures. To obtain best results, we perform an in-depth comparison between the results of applying each consensus algorithm. Preliminary results show that Kwiksort algorithm outperforms all other algorithms in producing most common developer behavior. This study demonstrates how using consensus algorithms can help recommend to developers a consensual behavior when performing a particular programming task.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-487" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:487,&quot;slug&quot;:&quot;p14&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_487">
+
+	<div id="popmake-487" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_487" class="pum-title popmake-title">
+				Log4Perf: Suggesting Logging Locations for Web-based Systems’ Performance Monitoring			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Logs are widely used to monitor, understand and improve software performance. However, developers often face the challenge of making logging decisions. Prior works on automated logging guidance techniques are rather general, without considering a particular goal, such as monitoring software performance. We present Log4Perf, an automated approach that provides suggestions of where to insert logging statement with the goal of monitoring web-based systems’ software performance. In particular, our approach builds and manipulates a statistical performance model to identify the locations in the source code that statistically significantly influences software performance. Our evaluation results show that Log4Perf can build well-fit statistical performance models, which can be leveraged to investigate the influence of locations in the source code on performance. Also, our approach is an ideal complement to traditional approaches that are based on software metrics or performance hotspots. Log4Perf is integrated into the release engineering process of a commercial software to provide logging suggestions on a regular basis.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-485" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:485,&quot;slug&quot;:&quot;p13&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_485">
+
+	<div id="popmake-485" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_485" class="pum-title popmake-title">
+				DLFinder: Characterizing and Detecting Duplicate Logging Code Smells			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Developers rely on software logs for varieties of tasks. Recent research on logs often only consider the appropriateness of a log as an individual item, while logs are typically analyzed in tandem. Thus we focus on studying duplicate logging code, which are log lines that have the same static text message. Such duplication in logs are potential indications of logging code smells, which may affect developers’ understanding of the system. We uncover five patterns of duplicate logging code smells by manually studying a statistical sample of duplicate logs from four large-scale open source systems. We further manually study all the code smell instances and identify the problematic and justifiable cases of the uncovered patterns. Then, we contact developers in order to verify our result. We integrated our manual study result and developers’ feedback into our static analysis tool, DLFinder, which helps developers identify and refactor duplicate logging code smells.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-483" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:483,&quot;slug&quot;:&quot;p12&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_483">
+
+	<div id="popmake-483" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_483" class="pum-title popmake-title">
+				An empirical study of obsolete knowledge on Stack Overflow			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>An enormous amount of knowledge in software engineering is accumulated on Stack Overflow. However, as time passes, knowledge embedded in answers may become obsolete. Such obsolete answers, if not identified or documented clearly, may mislead answer seekers and cause unexpected problems (e.g., using an outdated security protocol). In this paper, we study the characteristics of obsolete answers. We find that: 1) 58.4% of the obsolete answers were already obsolete when they were first posted. 2) Only 23.5% of such answers are ever updated. 3) Answers in web and mobile development tags are more likely to become obsolete. 4) 79.5% of obsolete observations are supported by evidence (e.g., version information and obsolete time). We suggest that 1) Stack Overflow should encourage the whole community to maintain obsolete answers. 2) Answerers are suggested to include the information of valid versions/time when posting answers. 3) Answer seekers are suggested to go through comments in case of answer obsolescence.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-481" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:481,&quot;slug&quot;:&quot;p11&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_481">
+
+	<div id="popmake-481" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_481" class="pum-title popmake-title">
+				Rewarding open source developers: a case study of Bountysource bounties			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Because of the voluntary nature of open source, sometimes it is hard to find a developer to work on a particular issue. However, these issues may be of high priority to others. To motivate developers to address these particular issues, people can offer monetary rewards (i.e., bounties) for addressing an issue report. To better understand how bounties can be leveraged to evolve an open source project, we investigated 3,509 Github projects’ issues for which bounties ($406,425 in total) were offered on Bountysource. We collect 31 factors and build a logistic regression model to understand the relationship between the bounty and the issue-addressed likelihood. We find that (1) providing a bounty for an issue earlier on and adding a bounty label are related to an increased issue-addressing likelihood. (2) The bounty value of an issue does not have a strong relationship with the likelihood of an issue being addressed.&nbsp;&nbsp;</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-479" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:479,&quot;slug&quot;:&quot;p10&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_479">
+
+	<div id="popmake-479" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_479" class="pum-title popmake-title">
+				Revisiting “Understanding the Rationale for Updating a Function’s Comment”			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Code comments play a fundamental role in Software Maintenance and Evolution. As such, they need to be kept up-to-date. A decade ago, Malik et al. introduced a classification model to flag whether the comments of a function need to be updated when such a function is changed. The authors claimed that their model had an overall accuracy of 80%.&nbsp; We discovered and addressed eight drawbacks in the design and evaluation of their model. In particular, we noticed that the out-of-bag performance evaluation yielded unrealistic results in all cases considered. In addition, we observed that the feature ranking tends to be biased towards the features that are important for the most-frequently occurring type of comment change (i.e., either inner or outer comments). Finally, we introduce and evaluate a simpler model and conclude that its performance is statistically similar to that of the full model and that it is more easily interpretable.&nbsp;</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-477" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:477,&quot;slug&quot;:&quot;p09&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_477">
+
+	<div id="popmake-477" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_477" class="pum-title popmake-title">
+				Predicting and Prioritizing Tests that Manifest Performance Regressions at the Commit Level			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Performance issues may compromise user experiences, increase the resources cost, and cause field failures. One of the most prevalent performance issues is performance regression. Prior research proposes various automated approaches that detect performance regressions. However, the performance regression detection is conducted after the system is built and deployed. Hence, large amounts of resources are still required to locate and fix performance regressions. In our paper, we propose an approach that automatically predicts whether a test would manifest performance regression in a code commit. We conduct case studies on three open-source systems. Our results show that our approach can predict performance-regression-prone tests with high AUC values. In addition, we find that traditional size metrics are still the most important factors. On the other hand, performance-related metrics that are associated with Loop and Adding Expensive Variable are also risky for introducing performance regressions. Our approach and the study results can be leveraged by practitioners to effectively cope with performance regressions in a timely and proactive manner.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+<div id="pum-475" class="pum pum-overlay pum-theme-447 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:475,&quot;slug&quot;:&quot;p08&quot;,&quot;theme_id&quot;:447,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_475">
+
+	<div id="popmake-475" class="pum-container popmake theme-447 pum-responsive pum-responsive-medium responsive size-medium">
+
+				
+
+				            <div id="pum_popup_title_475" class="pum-title popmake-title">
+				Studying the Characteristics of Logging Practices in Mobile Apps: A Case Study on F-Droid			</div>
+		
+
+		
+
+				<div class="pum-content popmake-content">
+			<p>Logging is a common practice in software development and contains rich information. However, little is known about mobile apps’ logging practices. Therefore, we conduct a case study on 1,444 open source Android apps in the F-Droid repository. We find that although mobile app logging is less pervasive than large software systems, logging is leveraged in almost all studied apps. We compare the log level of each logging statement and developers’ rationale of using the logs. All too often(over 30%), developers choose an inappropriate log level. Such inappropriate log level may prevent the useful run-time information to be recorded or may generate unnecessary logs causing performance overhead and security issues. Finally, we conduct a performance evaluation with disabling logging messages in four open-source Android apps. We observe a significant performance overhead on response time, CPU and I/O. Our results imply the need of systematic guidance to assistant in mobile logging practices.</p>
+		</div>
+
+
+				
+
+				            <button type="button" class="pum-close popmake-close" aria-label="Close">
+			CLOSE            </button>
+		
+	</div>
+
+</div>
+</body></html>
